@@ -12,7 +12,7 @@ import java.util.ArrayList;
  */
 public class Dictionary {
 
-    public static final String FILE_NAME = "file/dictionary.txt";
+    public static final String FILE_NAME = "file/dictionnaire.txt";
 
     /**
      * Our dictionary, a simple list of words.
@@ -43,6 +43,57 @@ public class Dictionary {
             list.add(str);
         });
         return list;
+    }
+    
+    public ArrayList<String> getListe(int size, ArrayList<String> lettres) {
+        // Init empty list
+        ArrayList<String> list = new ArrayList<>();
+        // Loop
+        this.listOfWords.stream().filter((str) -> (isPossible(str, size, lettres))).forEach((str) -> {
+            list.add(str);
+        });
+        return list;
+    }
+    
+    private boolean isPossible(String str, int size,ArrayList<String> lettres) {
+        if(str.length() != size) {
+            return false;
+        }
+        for(int i=0;i<str.length();i++) {
+            if(!lettres.contains(getStringWithoutAccent(str.charAt(i)+""))) {
+                return false;
+            }
+        }
+        return true;
+    }
+    
+    private String getStringWithoutAccent(String c) {
+        String res = c;
+        switch(c) {
+            case "é":
+            case "è":
+            case "ê":
+                res = "e";
+                break;
+            case "à":
+            case "â":
+                res = "a";
+                break;
+            case "î":
+                res = "i";
+                break;
+            case "ô":
+                res = "o";
+                break;
+            case "û":
+            case "ù":
+                res = "u";
+                break;
+            case "ç":
+                res = "c";
+                break;
+        }
+        return res;
     }
     
     /**

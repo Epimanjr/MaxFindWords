@@ -20,6 +20,7 @@ import javafx.stage.Stage;
 public class MaxFindWord extends Application {
     
     public static Service<Void> service;
+    public static Stage beginStage;
     
     @Override
     public void start(Stage stage) throws Exception {
@@ -31,6 +32,7 @@ public class MaxFindWord extends Application {
         stage.setTitle("MaxFindWord, by Maxime BLAISE");
         stage.setScene(scene);
         stage.show();
+        beginStage = stage;
         // Service
         service.start();
         

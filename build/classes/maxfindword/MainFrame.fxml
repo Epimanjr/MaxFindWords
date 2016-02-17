@@ -16,8 +16,8 @@
             <Font size="15.0" />
          </font>
       </Label>
-      <Slider fx:id="sizeWords" blockIncrement="1.0" layoutX="239.0" layoutY="41.0" max="25.0" min="2.0" prefHeight="38.0" prefWidth="187.0" showTickLabels="true" showTickMarks="true" value="2.0" />
-      <Label fx:id="labelCount" layoutX="428.0" layoutY="51.0" prefHeight="17.0" prefWidth="144.0" textFill="#1fd361" textOverrun="CLIP" />
+      <Slider fx:id="sizeWords" blockIncrement="1.0" layoutX="239.0" layoutY="41.0" max="25.0" min="2.0" showTickLabels="true" showTickMarks="true" value="2.0" />
+      <Label fx:id="labelCount" layoutX="385.0" layoutY="51.0" prefHeight="17.0" prefWidth="187.0" textFill="#1fd361" textOverrun="CLIP" />
       <Separator layoutX="24.0" layoutY="147.0" prefHeight="10.0" prefWidth="553.0" />
       <Label layoutX="24.0" layoutY="79.0" prefHeight="21.0" prefWidth="215.0" text="Lettres contenues dans le mot">
          <font>
@@ -27,11 +27,5 @@
       <TextField fx:id="listLettres" layoutX="235.0" layoutY="77.0" prefHeight="25.0" prefWidth="187.0" />
       <Button defaultButton="true" layoutX="479.0" layoutY="113.0" mnemonicParsing="false" onAction="#valider" prefHeight="25.0" prefWidth="98.0" text="Valider" textFill="#111111" />
       <ListView fx:id="listWords" layoutX="200.0" layoutY="157.0" prefHeight="231.0" prefWidth="200.0" />
-      <Label layoutX="24.0" layoutY="115.0" prefHeight="17.0" prefWidth="215.0" text="Expression régulière">
-         <font>
-            <Font size="15.0" />
-         </font>
-      </Label>
-      <TextField fx:id="expressionReguliere" layoutX="235.0" layoutY="113.0" prefHeight="25.0" prefWidth="187.0" />
    </children>
 </AnchorPane>

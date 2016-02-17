@@ -15,10 +15,13 @@ import javafx.concurrent.Task;
 import javafx.concurrent.WorkerStateEvent;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Scene;
 import javafx.scene.chart.XYChart;
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressIndicator;
+import javafx.stage.Stage;
 
 /**
  *
@@ -49,6 +52,15 @@ public class BeginFrameController implements Initializable {
         };
         MaxFindWord.service.setOnSucceeded((WorkerStateEvent event1) -> {
             progress.setProgress(1F);
+            Stage stage = new Stage();
+            try {
+                stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("MainFrame.fxml"))));
+                MaxFindWord.beginStage.close();
+                stage.setTitle("MaxFindWord, by Maxime BLAISE");
+                stage.show();
+            } catch (IOException ex) {
+                Logger.getLogger(BeginFrameController.class.getName()).log(Level.SEVERE, null, ex);
+            }
         });
     }
 
