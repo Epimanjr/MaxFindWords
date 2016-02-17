@@ -6,6 +6,8 @@
 package maxfindword;
 
 import javafx.application.Application;
+import javafx.concurrent.Service;
+import javafx.concurrent.WorkerStateEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -17,14 +19,21 @@ import javafx.stage.Stage;
  */
 public class MaxFindWord extends Application {
     
+    public static Service<Void> service;
+    
     @Override
     public void start(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("BeginFrame.fxml"));
         
         Scene scene = new Scene(root);
         
+        // Affichage fenêtre du début
+        stage.setTitle("MaxFindWord, by Maxime BLAISE");
         stage.setScene(scene);
         stage.show();
+        // Service
+        service.start();
+        
     }
 
     /**
